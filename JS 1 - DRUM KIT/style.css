@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Sedgwick+Ave&display=swap');
 
 html {
-  background-image: url("drum.jpg");
+  background-image: url("images/drum.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 70%;
