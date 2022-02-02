@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Wall Clock</title>
+</head>
+<body>
+    <span >
+        <img src="images/sun.png" id="icon">
+    </span>
+    <h1>
+        My Time
+    </h1>
+
+     <div class="date">
+         <div class="date-div">
+       <span class="day"></span>
+       <span class="today"></span>
+    </div>
+    </div> 
+     
+   
+    <div class="clock">
+      
+          <span class="hour"></span>
+          <span class="minute"></span>
+          <span class="second"></span>
+          <span class="dot"></span>
+    
+      </div>
+</body>
+<script>
+    var inc = 1000; // TO call setinterval every 1000 msec
+
+    clock();
+    
+    function clock() {
+     
+        var date= new Date();
+        var day = date.getDay();
+        var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+        var monthlist = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var today = date.getDate()+' ' +monthlist[date.getMonth()+1]+', ' + date.getFullYear();
+
+      var day = daylist[date.getDay()];
+     /* var month= monthlist[date.getMonth()+1];
+      var year=date.getFullYear();
+      var num= date.getDate();*/
+      //console.log(date);
+    
+      const hours = ((date.getHours() + 11) % 12 + 1);
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+      
+      const hour = hours * 30;
+      const minute = minutes * 6;
+      const second = seconds * 6;
+
+      document.querySelector('.day').innerHTML=day
+      document.querySelector('.today').innerHTML=today
+      document.querySelector('.hour').style.transform = `rotate(${hour}deg)`
+      document.querySelector('.minute').style.transform = `rotate(${minute}deg)`
+      document.querySelector('.second').style.transform = `rotate(${second}deg)`
+    }
+    
+    setInterval(clock, inc);
+
+   
+        var icon=document.getElementById('icon');
+        icon.onclick=function()
+        {
+            console.log("hello");
+            document.body.classList.toggle("light-theme");
+          if(document.body.classList.contains("light-theme"))
+          icon.src='Images/moon.png'
+          else icon.src='Images/sun.png'
+
+        }
+    
+    
+
+</script>
+</html>
