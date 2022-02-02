@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h7>Update <span class='hl'>CSS</span> Variables with<span class='hl'> JS</span></h7>
@@ -18,47 +19,7 @@
     <input id="base" type="color" name="base" value="white">
   </div>
 
-  <img src="background.jpg">
-
-  <style>
-    :root {
-      --base: white;
-      --spacing: 10px;
-      --blur: 5px;
-    }
-
-    img {
-      padding: var(--spacing);
-      background: var(--base);
-      filter: blur(var(--blur));
-      height: 400px;
-      width:800px;
-    }
-    label{
-        font-size: 25px;
-    }
-
-    .hl {
-      color: var(--base);
-    }
-
-    body {
-      text-align: center;
-      background: black;
-      color: white;
-      font-family: 'helvetica neue', sans-serif;
-      font-weight: 100;
-      font-size: 50px;
-    }
-
-    .controls {
-      margin-bottom: 35px;
-    }
-
-    input {
-        width: 100px;
-      }
-  </style>
+  <img src="https://picsum.photos/800/400">
 
   <script>
     const inputs = document.querySelectorAll('.controls input');
